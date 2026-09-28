@@ -1,13 +1,15 @@
-import 'package:test/test.dart';
-import 'package:gilded_rose/gilded_rose.dart';
+import '../lib/gilded_rose.dart';
 
-main() {
-  test('foo', () {
-    var item = new Item('foo', 0, 0);
-    var items = <Item>[item];
+void main() {
+  final item = Item('foo', 0, 0);
+  final items = <Item>[item];
 
-    GildedRose app = new GildedRose(items);
-    app.updateQuality();
-    expect("fixme", app.items[0].name);
-  });
+  final app = GildedRose(items);
+  app.updateQuality();
+
+  if (app.items[0].name != 'foo') {
+    throw StateError(
+      'Expected item name to remain "foo", got "${app.items[0].name}".',
+    );
+  }
 }
