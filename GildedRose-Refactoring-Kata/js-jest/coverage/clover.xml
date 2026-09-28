@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790563171548" clover="3.2.0">
-  <project timestamp="1790563171549" name="All files">
-    <metrics statements="31" coveredstatements="31" conditionals="35" coveredconditionals="34" methods="3" coveredmethods="3" elements="69" coveredelements="68" complexity="0" loc="31" ncloc="31" packages="1" files="1" classes="1"/>
+<coverage generated="1790563806527" clover="3.2.0">
+  <project timestamp="1790563806527" name="All files">
+    <metrics statements="31" coveredstatements="31" conditionals="35" coveredconditionals="35" methods="3" coveredmethods="3" elements="69" coveredelements="69" complexity="0" loc="31" ncloc="31" packages="1" files="1" classes="1"/>
     <file name="gilded_rose.js" path="C:\dev\TP-Versao1\GildedRose-Refactoring-Kata\js-jest\src\gilded_rose.js">
-      <metrics statements="31" coveredstatements="31" conditionals="35" coveredconditionals="34" methods="3" coveredmethods="3"/>
+      <metrics statements="31" coveredstatements="31" conditionals="35" coveredconditionals="35" methods="3" coveredmethods="3"/>
       <line num="3" count="19" type="stmt"/>
       <line num="4" count="19" type="stmt"/>
       <line num="5" count="19" type="stmt"/>
-      <line num="11" count="19" type="stmt"/>
-      <line num="14" count="19" type="stmt"/>
+      <line num="11" count="20" type="stmt"/>
+      <line num="14" count="20" type="stmt"/>
       <line num="15" count="19" type="cond" truecount="4" falsecount="0"/>
       <line num="16" count="9" type="cond" truecount="2" falsecount="0"/>
       <line num="17" count="8" type="cond" truecount="2" falsecount="0"/>
@@ -33,7 +33,7 @@
       <line num="50" count="1" type="stmt"/>
       <line num="53" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="54" count="1" type="stmt"/>
-      <line num="60" count="19" type="stmt"/>
+      <line num="60" count="20" type="stmt"/>
       <line num="64" count="1" type="stmt"/>
     </file>
   </project>

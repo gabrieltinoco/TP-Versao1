@@ -1,6 +1,11 @@
 const { Item, Shop } = require('../src/gilded_rose');
 
 describe('Gilded Rose - Suíte de Testes (Characterization & TDD)', () => {
+
+  it('cria uma lista vazia por padrão e não falha ao atualizar', () => {
+    const shop = new Shop();
+    expect(shop.updateQuality()).toEqual([]);
+  });
   
   describe('Itens Normais (Padrão)', () => {
     it('deve diminuir sellIn e quality em 1 antes do vencimento', () => {
