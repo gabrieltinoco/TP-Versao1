@@ -4,6 +4,8 @@
 
 Na Iteração 1, vocês exploraram o "que" a IA consegue gerar. Na Iteração 2, vocês atuarão como Engenheiros de QA seniores. Vocês possuem agora o conhecimento suficiente para explorar uma melhor abordagem quando tem acesso a Estrutura Interna (Caixa Branca). A missão é confrontar a suíte gerada pela IA com uma análise matemática e estrutural do código legado.
 
+**Combinação utilizada pelo grupo:** JavaScript + Gemini
+
 ## 2. Descrição da Missão: Iteração 2
 
 Vocês devem realizar uma "necropsia" lógica do código Gilded Rose para verificar se a IA foi capaz de percorrer todos os caminhos possíveis ou se ela apenas "arranhou a superfície".
@@ -28,16 +30,11 @@ O grupo deve selecionar o método principal de atualização de inventário do G
 
 Os slides deve ser atualizado para incluir a análise da Iteração 2. O quadro comparativo final é o coração da entrega:
 
-| Critério | Iteração 1 (Prompt | Abordagem Manual | Iteração 2 (Prompt |
+| Critério | Iteração 1 (Prompt ingênuo) | Abordagem manual (teórica) | Iteração 2 (Prompt estruturado) |
 | --- | --- | --- | --- |
-|   | Ingênuo) | (Teórica) | Estruturado) |
-
-
-| Cobertura | de | % detectada | % mapeada | % detectada |
-| --- | --- | --- | --- | --- |
-| Decisão |   |   |   |   |
-| Casos de Teste |   | Qtd gerada | Qtd necessária | Qtd gerada |
-| Alucinações |   | Sim/Não | N/A | Sim/Não |
+| Cobertura de decisão | 97,14% de branches na execução registrada antes do caso de inventário vazio | 100% mapeada nos 14 cenários independentes | 100% de branches na execução registrada após incluir inventário vazio; resposta da LLM ainda não registrada |
+| Casos de teste | 20 no total: 18 passam e 2 testes de Conjured falham | 14 cenários mapeados (13 itens e inventário vazio) | Quantidade gerada pela LLM não comprovada; o mapeamento documentado contém 14 cenários |
+| Alucinações | Sim: a resposta afirma 100% de branches, mas a execução registrada antes do caso vazio mostra 97,14% | N/A | Não avaliável sem a resposta real da LLM |
 
 ## 4. Entrega e Apresentação (Sorteio)
 

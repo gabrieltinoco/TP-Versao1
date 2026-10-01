@@ -1,5 +1,7 @@
 ## Evidências
 
+**Combinação utilizada pelo grupo:** JavaScript + Gemini. O nome da LLM não foi localizado nos registros disponíveis e precisa ser confirmado pelo grupo.
+
 #### Prompt 1
 
 Prompt:
@@ -396,14 +398,14 @@ Cada linha representa um cenário independente de item; `Shop()` sem argumentos 
 | 13 | Sulfuras, Hand of Ragnaros | -1 | 80 | Caminho vencido e guarda que preserva quality |
 | 14 | Inventário vazio (`new Shop()`) | — | — | Zero iterações do `for` e lista padrão vazia |
 
-#### Matriz Comparativa
+#### Tabela Comparativa Final
 
-| Critério | Prompt anterior (orientado a regras e branches) | Prompt evoluído (auditoria estrutural) |
-|---|---|---|
-| Abordagem | Lista regras, limites e tipos de item; solicita 100% de Branch Coverage. | Exige CFG, cálculo de complexidade, definição de cobertura e mapeamento dos inputs. |
-| Medida estrutural | Não calcula a complexidade ciclomática. | `V(G) = 19`, usando `E = 37` e `N = 20` no grafo reduzido. |
-| Derivação dos testes | Casos selecionados por regras e exemplos de fronteira. | 13 cenários de item mais o caso de inventário vazio; conjunto cobre ambas as saídas das decisões, sem afirmar que 19 é o número de testes. |
-| Evidência de cobertura | Antes de cobrir `Shop()` sem argumento: 100% statements, 97,14% branches, 100% functions e 100% lines. | Após incluir o caso vazio: 100% nas quatro métricas do Jest. |
-| Resultado de execução | A suíte contém três testes `Conjured`, que não fazem parte do método legado auditado. | Execução atual: 18 testes passam e 2 falham nos resultados esperados de `Conjured` (18 recebido 19; 16 recebido 18). Cobertura de 100% não significa suíte aprovada. |
+| Critério | Iteração 1 (Prompt ingênuo) | Abordagem manual (teórica) | Iteração 2 (Prompt estruturado) |
+|---|---|---|---|
+| Cobertura de decisão | 97,14% de branches na execução registrada antes do caso de inventário vazio | 100% mapeada nos 14 cenários independentes | 100% de branches na execução registrada após incluir inventário vazio; atribuição da resposta à LLM ainda não comprovada |
+| Quantidade de casos de teste | 20 no total: 18 passam e 2 testes de `Conjured` falham | 14 cenários mapeados (13 itens e inventário vazio) | Quantidade gerada pela LLM não comprovada; o mapeamento documentado contém 14 cenários |
+| Alucinações | Sim: a resposta afirma 100% de branches, mas a execução registrada antes do caso vazio mostra 97,14% | N/A | Não avaliável sem a resposta real da LLM |
+
+**Nota de evidência:** os resultados de cobertura da Iteração 2 descrevem a suíte final executada, não comprovam que os casos foram gerados pela LLM. Para fechar essa coluna, registre a transcrição real da resposta ao Prompt 4 e atualize a quantidade de casos gerada e a avaliação de alucinações com base nela.
 
 **Conclusão:** o prompt evoluído torna a auditoria verificável e evita confundir complexidade, cobertura de decisão e quantidade de testes. Os cenários `Conjured` são requisitos novos: não entram no CFG nem na complexidade calculada e continuam falhando até que a regra seja implementada.
